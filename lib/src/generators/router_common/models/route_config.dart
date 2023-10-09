@@ -38,6 +38,8 @@ class RouteConfig {
   final bool? hasWrappedRoute;
   final int? reverseDurationInMilliseconds;
   final int? durationInMilliseconds;
+  final Duration? reverseDuration;
+  final Duration? duration;
   final int routeType;
   final List<ResolvedType> guards;
   final String? cupertinoNavTitle;
@@ -68,7 +70,9 @@ class RouteConfig {
     this.redirectTo,
     this.hasWrappedRoute,
     this.durationInMilliseconds,
-    this.reverseDurationInMilliseconds,
+    this.reverseDurationInMilliseconds,  
+    this.duration,
+    this.reverseDuration,
     this.returnType,
     this.parentRouterConfig,
     this.routeType = RouteType.material,
@@ -115,6 +119,8 @@ class RouteConfig {
     bool? usesTabsRouter,
     int? reverseDurationInMilliseconds,
     int? durationInMilliseconds,
+    Duration? reverseDuration,
+    Duration? duration,
     int? routeType,
     List<ResolvedType>? guards,
     String? cupertinoNavTitle,
@@ -155,6 +161,10 @@ class RouteConfig {
           reverseDurationInMilliseconds ?? this.reverseDurationInMilliseconds,
       durationInMilliseconds:
           durationInMilliseconds ?? this.durationInMilliseconds,
+      reverseDuration:
+          reverseDuration ?? this.reverseDuration,
+      duration:
+          duration ?? this.duration,
       routeType: routeType ?? this.routeType,
       guards: guards ?? this.guards,
       cupertinoNavTitle: cupertinoNavTitle ?? this.cupertinoNavTitle,

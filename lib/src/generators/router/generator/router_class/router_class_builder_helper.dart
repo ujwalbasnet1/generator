@@ -178,10 +178,16 @@ class RouterClassBuilderHelper {
               (context, animation, secondaryAnimation, child) {
             return child;
           },'''),
-          if (route.durationInMilliseconds != null)
+          if (route.duration != null)
+            Code(
+                'transitionDuration: ${route.duration},'),
+          if (route.reverseDuration != null)
+            Code(
+                'transitionDuration: ${route.reverseDuration},'),
+          if (route.duration == null && route.durationInMilliseconds != null)
             Code(
                 'transitionDuration: const Duration(milliseconds: ${route.durationInMilliseconds}),'),
-          if (route.reverseDurationInMilliseconds != null)
+          if (route.reverseDuration == null && route.reverseDurationInMilliseconds != null)
             Code(
                 'reverseTransitionDuration: const Duration(milliseconds: ${route.reverseDurationInMilliseconds}),'),
         ]),
